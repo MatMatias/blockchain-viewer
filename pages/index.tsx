@@ -1,9 +1,15 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
+import { Fragment } from "react";
+import { AppComponents } from "../app-components";
+import { Components } from "../components";
 
 const Home: NextPage = () => {
   return (
-    <h1>Hello world</h1>
-  )
-}
+    <Fragment>
+      <AppComponents.Navbar />
+      <Components.Main children={<p>PLACEHOLDER</p>} />
+    </Fragment>
+  );
+};
 
-export default Home
+export default Home;
