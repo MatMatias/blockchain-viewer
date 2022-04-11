@@ -5,10 +5,12 @@ import { Components } from "../components";
 
 const Home: NextPage = () => {
   return (
-    <Fragment>
+    <div className="w-screen h-screen flex flex-col">
       <AppComponents.Navbar />
-      <Components.Main children={<p>PLACEHOLDER</p>} />
-    </Fragment>
+      <Components.Main>
+        <AppComponents.Block.Form />
+      </Components.Main>
+    </div>
   );
 };
 
