@@ -29,3 +29,5 @@ export class Blockchain {
     }
   }
 }
+
+export type BlockchainType = InstanceType<typeof Blockchain>;

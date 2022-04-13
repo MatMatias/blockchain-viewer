@@ -29,4 +29,4 @@ export class Block {
   }
 }
 
-export type BlockType = typeof Block;
+export type BlockType = InstanceType<typeof Block>;

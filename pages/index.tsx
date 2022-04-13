@@ -10,8 +10,8 @@ const Home: NextPage = () => {
       </Components.Header>
 
       <Components.Main>
-        <AppComponents.Form />
         <AppComponents.Blockchain />
+        <AppComponents.Form />
       </Components.Main>
     </div>
   );

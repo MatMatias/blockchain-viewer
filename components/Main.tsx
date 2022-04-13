@@ -7,7 +7,7 @@ interface Props {
 export const Main: FC<Props> = ({ children }) => {
   return (
     <Fragment>
-      <main className="w-full h-full flex flex-col justify-center items-center text-white bg-zinc-900">
+      <main className="w-full h-full flex flex-col gap-y-5 py-5 justify-center items-center text-white bg-zinc-900">
         {children}
       </main>
     </Fragment>
