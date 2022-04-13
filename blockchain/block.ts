@@ -28,3 +28,5 @@ export class Block {
     }
   }
 }
+
+export type BlockType = typeof Block;

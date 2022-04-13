@@ -1,8 +1,8 @@
 import { bindActionCreators } from "redux";
 import { store } from "./store";
 
-const doInitializeBlockchain = (payload: number) => ({
-  type: "blockchain/initializeBlockchain",
+const doSetDifficulty = (payload: number) => ({
+  type: "blockchain/setDifficulty",
   payload: { difficulty: payload },
 });
 
@@ -15,7 +15,7 @@ const { dispatch } = store;
 
 export const boundBlockchainActions = bindActionCreators(
   {
-    initializeBlockchain: doInitializeBlockchain,
+    setDifficulty: doSetDifficulty,
     addBlock: doAddBlock,
   },
   dispatch

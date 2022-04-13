@@ -1,7 +1,9 @@
 import { Navbar } from "./navbar";
-import { Block } from "./block";
+import { Blockchain } from "./blockchain";
+import { Form } from "./form";
 
 export const AppComponents = {
   Navbar: Navbar,
-  Block: Block,
+  Blockchain: Blockchain,
+  Form: Form,
 };

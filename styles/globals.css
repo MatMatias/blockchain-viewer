@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .card {
+    @apply py-10 px-10 shadow-lg block rounded-lg drop-shadow-2xl;
+  }
+
+  .button {
+    @apply bg-zinc-700 p-2;
+  }
+}
+
 html,
 body {
   background: "181818";
@@ -19,3 +29,5 @@ a {
 * {
   box-sizing: border-box;
 }
+
+

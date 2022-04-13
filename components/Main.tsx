@@ -1,7 +1,7 @@
 import { Fragment, FC } from "react";
 
 interface Props {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 }
 
 export const Main: FC<Props> = ({ children }) => {

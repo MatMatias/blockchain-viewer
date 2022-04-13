@@ -2,6 +2,7 @@ import { Blockchain } from "../blockchain";
 
 const initialState = {
   blockchain: new Blockchain(0),
+  chain: [],
 };
 
 interface PayloadShape {
@@ -10,21 +11,22 @@ interface PayloadShape {
 }
 
 export function reducer(state = initialState, action: { type: string; payload: PayloadShape }) {
-  let blockchain: Blockchain;
+  const { blockchain } = state;
 
   switch (action.type) {
-    case "blockchain/initializeBlockchain":
-      blockchain = new Blockchain(action.payload.difficulty!);
+    case "blockchain/setDifficulty":
+      blockchain.difficulty = action.payload.difficulty!;
       return {
         ...state,
         blockchain: blockchain,
+        chain: [...blockchain.chain],
       };
     case "blockchain/addBlock":
-      blockchain = state.blockchain;
       blockchain.addBlock(action.payload.blockData!);
       return {
         ...state,
         blockchain: blockchain,
+        chain: [...blockchain.chain],
       };
     default:
       return state;
