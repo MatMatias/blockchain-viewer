@@ -1,6 +1,7 @@
 import { Blockchain } from "../blockchain";
 import type { BlockchainType } from "../blockchain/blockchain";
 import type { BlockType } from "../blockchain/block";
+import { AnyAction } from "redux";
 
 interface StateShape {
   blockchain: BlockchainType;
@@ -8,10 +9,10 @@ interface StateShape {
   difficulty: number;
 }
 
-interface PayloadShape {
-  difficulty?: number;
-  blockData?: string;
-}
+// interface PayloadShape {
+//   difficulty?: number;
+//   blockData?: string;
+// }
 
 const initialState: StateShape = {
   blockchain: new Blockchain(0),
@@ -19,7 +20,7 @@ const initialState: StateShape = {
   difficulty: 0,
 };
 
-export function reducer(state = initialState, action: { type: string; payload: PayloadShape }) {
+export function reducer(state = initialState, action: AnyAction) {
   const { blockchain } = state;
 
   switch (action.type) {
@@ -27,8 +28,6 @@ export function reducer(state = initialState, action: { type: string; payload: P
       blockchain.difficulty = action.payload.difficulty!;
       return {
         ...state,
-        blockchain: blockchain,
-        chain: [...blockchain.chain],
         difficulty: action.payload.difficulty,
       };
     case "blockchain/addBlock":
@@ -37,9 +36,11 @@ export function reducer(state = initialState, action: { type: string; payload: P
         ...state,
         blockchain: blockchain,
         chain: [...blockchain.chain],
-        difficulty: blockchain.difficulty,
       };
     default:
-      return state;
+      // throw new Error(`Unhandled action type ${JSON.stringify(action.type)}`);
+      return {
+        ...state,
+      };
   }
 }
