@@ -4,7 +4,7 @@
 
 @layer components {
   .card {
-    @apply py-10 px-10 shadow-lg block rounded-lg drop-shadow-2xl;
+    @apply shadow-lg block rounded-lg drop-shadow-2xl;
   }
 
   .button {
@@ -14,7 +14,8 @@
 
 html,
 body {
-  background: "181818";
+  @apply bg-zinc-900;
+  background: #181818;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,

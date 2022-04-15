@@ -6,7 +6,7 @@ export const Blockchain: FC = () => {
   return (
     <Fragment>
       {chain.length > 0 && (
-        <ul className="flex flex-col gap-y-2">
+        <ul className="flex flex-col gap-y-5">
           {chain.map((block) => {
             const { data, hash, nonce, parentHash, timestamp } = block;
             let isGenesisBlock = false;
@@ -17,22 +17,41 @@ export const Blockchain: FC = () => {
               <Fragment>
                 {isGenesisBlock ? (
                   <li key={hash}>
-                    <article className="flex flex-col gap-y-5 items-center bg-zinc-800 card">
-                      <p>Data: {data}</p>
-                      <p>Hash: {hash}</p>
-                      <p>Hash: {hash}</p>
-                      <p>Nonce: {nonce}</p>
-                      <p>Timestamp: {timestamp}</p>
+                    <article className="flex flex-col items-start bg-zinc-800 card px-5 py-5">
+                      <p>
+                        <b>Data:</b> {data}
+                      </p>
+                      <p>
+                        <b>Hash:</b> {hash}
+                      </p>
+                      <p>
+                        <b>Nonce:</b> {nonce}
+                      </p>
+                      <p>
+                        <b>Timestamp: </b>
+                        {timestamp}
+                      </p>
                     </article>
                   </li>
                 ) : (
                   <li key={hash}>
-                    <article className="flex flex-col gap-y-5 items-center bg-zinc-800 card">
-                      <p>Data: {data}</p>
-                      <p>Hash: {hash}</p>
-                      <p>Nonce: {nonce}</p>
-                      <p>Parent Hash: {parentHash}</p>
-                      <p>Timestamp: {timestamp}</p>
+                    <article className="flex flex-col items-start tems-center bg-zinc-800 card px-5 py-5">
+                      <p>
+                        <b>Data:</b> {data}
+                      </p>
+                      <p>
+                        <b>Hash:</b> {hash}
+                      </p>
+                      <p>
+                        <b>Nonce:</b> {nonce}
+                      </p>
+                      <p>
+                        <b>Parent Hash: </b> {parentHash}
+                      </p>
+                      <p>
+                        <b>Timestamp: </b>
+                        {timestamp}
+                      </p>
                     </article>
                   </li>
                 )}

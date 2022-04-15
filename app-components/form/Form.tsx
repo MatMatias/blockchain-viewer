@@ -14,7 +14,7 @@ export const Form: FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-y-5 items-center bg-zinc-800 card">
+    <div className="flex flex-col gap-y-5 items-center bg-zinc-800 card px-10 py-10">
       <div className="flex flex-row gap-x-3">
         <label className="text-2xl">Data</label>
         <input className="text-black" type="text" value={blockData} onChange={handleOnChange} />
