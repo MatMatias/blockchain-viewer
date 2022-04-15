@@ -19,12 +19,19 @@ export const BlockchainDifficulty: FC = () => {
         Blockchain Initial Difficulty
       </label>
       <input
-        className="text-black"
+        className="text-black max-w-fit text-center"
+        size={10}
         type="number"
         onChange={handleOnChange}
         value={difficultyValue}
       />
-      <button className="button" onClick={() => handleOnClick(difficultyValue)}>
+      <button
+        className="button"
+        onClick={() => {
+          alert("Difficulty set");
+          handleOnClick(difficultyValue);
+        }}
+      >
         Initialize blockchain
       </button>
     </div>
