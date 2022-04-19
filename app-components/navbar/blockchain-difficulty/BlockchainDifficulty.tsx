@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, useState } from "react";
 import { boundBlockchainActions } from "../../../redux/creators";
 
-export const BlockchainDifficulty: FC = () => {
+export const BlockchainDifficulty: FC = (): JSX.Element => {
   const [difficultyValue, setDifficultyValue] = useState(0);
   const { setDifficulty } = boundBlockchainActions;
 

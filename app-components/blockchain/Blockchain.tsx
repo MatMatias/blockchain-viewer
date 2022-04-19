@@ -1,7 +1,7 @@
 import { FC, Fragment } from "react";
 import { useAppSelector } from "../../redux/hooks";
 
-export const Blockchain: FC = () => {
+export const Blockchain: FC = (): JSX.Element => {
   const { chain } = useAppSelector((state) => state);
   return (
     <Fragment>
