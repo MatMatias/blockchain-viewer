@@ -9,11 +9,6 @@ interface StateShape {
   difficulty: number;
 }
 
-// interface PayloadShape {
-//   difficulty?: number;
-//   blockData?: string;
-// }
-
 const initialState: StateShape = {
   blockchain: new Blockchain(0),
   chain: [],
@@ -38,9 +33,6 @@ export function reducer(state = initialState, action: AnyAction) {
         chain: [...blockchain.chain],
       };
     default:
-      // throw new Error(`Unhandled action type ${JSON.stringify(action.type)}`);
-      return {
-        ...state,
-      };
+      throw new Error(`Unhandled action type ${JSON.stringify(action.type)}`);
   }
 }

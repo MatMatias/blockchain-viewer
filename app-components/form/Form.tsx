@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, useState } from "react";
 import { boundBlockchainActions } from "../../redux/creators";
 
-export const Form: FC = () => {
+export const Form: FC = (): JSX.Element => {
   const [blockData, setBlockData] = useState("");
   const { addBlock } = boundBlockchainActions;
 
@@ -19,7 +19,12 @@ export const Form: FC = () => {
         <label className="text-2xl">Data</label>
         <input className="text-black" type="text" value={blockData} onChange={handleOnChange} />
       </div>
-      <button className="button" onClick={() => handleOnClick(blockData)}>
+      <button
+        className="button"
+        onClick={() => {
+          handleOnClick(blockData);
+        }}
+      >
         ADD NEW BLOCK
       </button>
     </div>

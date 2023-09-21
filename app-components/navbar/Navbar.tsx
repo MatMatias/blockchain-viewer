@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Fragment, FC } from "react";
 import { BlockchainDifficulty } from "./blockchain-difficulty";
 
-export const Navbar: FC = () => {
+export const Navbar: FC = (): JSX.Element => {
   return (
     <Fragment>
       <Link href="/">
